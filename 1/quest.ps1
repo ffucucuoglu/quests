@@ -1,8 +1,4 @@
-﻿
-
-
-if((Get-ScheduledTask | Where TaskName -eq taskschedulerdeneme ).State -eq "Ready"){
-    powershell C:\Users\fuatf\Desktop\Untitled2.ps1
-}else{
-    schtasks.exe /create /tn pwrshldeneme /sc daily /tr "powershell -WindowStyle Hidden .\questek.ps1" /st 12:50
+if(-not ((Get-ScheduledTask | Where TaskName -eq denemetask ).State -eq "Ready")){
+    schtasks.exe /create /tn denemetask /sc daily /tr "powershell  -WindowStyle Hidden C:\Users\fuatf\Desktop\son\questAdditional.ps1" /st 03:06
+    exit
 }
