@@ -8,7 +8,7 @@ for ($i = 0; $i -le ($discLetters.length - 1); $i += 1) {
     $discLetters[$i]=$discLetters[$i]+":\"
     Get-ChildItem $discLetters[$i] -ErrorAction SilentlyContinue -Recurse|ForEach-Object{#-force
         if($_.LastWriteTime -ge $ystrdy){
-            (echo $_.LastWriteTime $_.FullName )>>C:\Users\fuatf\Desktop\$today
+            (echo $_.LastWriteTime $_.FullName )>>C:\Users\$today
         }
     }
 }
