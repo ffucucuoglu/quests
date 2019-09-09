@@ -20,8 +20,6 @@ class HTTPRequestHandler(server.SimpleHTTPRequestHandler):
         
         """Save a file following a HTTP PUT request"""
         
-        filename = os.path.basename(self.path)
-        print(filename)
         filename="a"+str(datetime.datetime.now())
         
         # Don't overwrite files
